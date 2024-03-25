@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class Controller {
 
@@ -27,5 +29,10 @@ public class Controller {
     @GetMapping("/record/{name}")
     public RecordsEntity getRecord(@PathVariable(value = "name") String name){
         return recordService.getRecord(name);
+    }
+
+    @GetMapping("/records")
+    public List<RecordsEntity> getAllRecord(){
+        return recordService.getRecords();
     }
 }

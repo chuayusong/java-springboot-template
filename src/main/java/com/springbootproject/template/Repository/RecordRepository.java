@@ -11,4 +11,5 @@ public interface RecordRepository extends CrudRepository<RecordsEntity, Integer>
 
     List<RecordsEntity> findByName(String name);
 
+    List<RecordsEntity> findAll();
 }

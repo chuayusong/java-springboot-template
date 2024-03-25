@@ -5,6 +5,8 @@ import com.springbootproject.template.Repository.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RecordService {
 
@@ -19,6 +21,10 @@ public class RecordService {
 
     public RecordsEntity getRecord(String name) {
         return recordRepository.findByName(name).get(0);
+    }
+
+    public List<RecordsEntity> getRecords() {
+        return recordRepository.findAll();
     }
 
 
